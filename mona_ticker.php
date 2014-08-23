@@ -51,16 +51,16 @@ mb_language("Japanese");
 mb_internal_encoding("UTF-8");
 
 
-$sendto="charlie_inthesky@i.softbank.jp";
-$sendfrom="new_comer123@yahoo.co.jp";
+$sendto="＊＊＊＊";  //あなたのメール送信先
+$sendfrom="＊＊＊＊"; //メール送信元（自由）
 
 // SMTPサーバーの情報を連想配列にセット
 $params = array(
-  "host" => "smtp.mail.yahoo.co.jp",   // SMTPサーバー名
-  "port" => 587,              // ポート番号
+  "host" => "＊＊＊＊＊＊",   // SMTPサーバー名
+  "port" => ＊＊＊,              // ポート番号
   "auth" => true,            // SMTP認証を使用する
-  "username" => "new_comer123",  // SMTPのユーザー名
-  "password" => "ns21!!2718"   // SMTPのパスワード
+  "username" => "＊＊＊＊＊",  // SMTPのユーザー名
+  "password" => "＊＊＊＊＊＊"   // SMTPのパスワード
 );
 
 // PEAR::Mailのオブジェクトを作成
@@ -79,10 +79,8 @@ $headers = array(
 );
 
 // メール本文
-$body="mona_tickerからの通知\n\n $key  ask:$ask bid:$bid \n";
+$body="mona_tickerからの通知\n\n $key  買値:$ask 売値:$bid \n";
 
-// 日本語なのでエンコード
-//$body = mb_convert_encoding($body, "ISO-2022-JP", "UTF-8");
 // sendメソッドでメールを送信
 $mailObject->send($recipients, $headers, $body);
 }
