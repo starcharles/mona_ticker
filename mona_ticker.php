@@ -16,7 +16,6 @@ while(1){
 
 function call_ticker($target_ask,$target_bid,$btc_jpy){
 
-//&monatr($btc_jpy,$ask,$bid);#もなとれ価格は別に表示
 
 //apiアドレスを配列で複数指定
 $api_add = array(
@@ -73,7 +72,7 @@ $recipients = "$sendto";
 
 // メールヘッダ情報を連想配列としてセット
 $headers = array(
-  "To" => "$sendto",         // →ここで指定したアドレスには送信されない
+  "To" => "$sendto",         
   "From" => "$sendfrom",
   "Subject" =>  mb_encode_mimeheader("mona_tickerからの通知") // 日本語の件名を指定する場合、mb_encode_mimeheaderでエンコード
 );
